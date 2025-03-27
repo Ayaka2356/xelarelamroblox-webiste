@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners - XelaRelam Roblox Scripts</title>
+    <!-- Favicon Links -->
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+            border-radius: 5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:hover {
+            color: #8b5cf6;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Partners Header */
+        .partners-header {
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .partners-header h1 {
+            color: #8b5cf6;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+        }
+        
+        .partners-header p {
+            color: #aaa;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        /* Partners Grid */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .partner-card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #333;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+            border-color: #8b5cf6;
+        }
+        
+        .partner-logo {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+        }
+        
+        .partner-card h3 {
+            color: #8b5cf6;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .partner-card p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        
+        .partner-link {
+            display: inline-block;
+            background-color: #8b5cf6;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .partner-link:hover {
+            background-color: #7c4dff;
+        }
+        
+        /* Partnership Banner */
+        .partnership-banner {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        
+        .partnership-banner h2 {
+            color: #8b5cf6;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        
+        .partnership-banner p {
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .discord-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7289da;
+            text-decoration: none;
+            transition: transform 0.3s;
+            font-size: 1rem;
+        }
+        
+        .discord-link:hover {
+            transform: scale(1.05);
+            color: #8b5cf6;
+        }
+        
+        .discord-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 15px;
+            }
+            
+            .partners-header h1 {
+                font-size: 2rem;
+            }
+            
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .partnership-banner {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.1rem;
+            }
+            
+            .logo img {
+                height: 30px;
+            }
+            
+            .partner-logo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="XelaRealm Logo">
+                XelaRelam Roblox Scripts
+            </a>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="scripts.html">Scripts</a>
+                <a href="partners.html">Partners</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Partners Header -->
+    <div class="container">
+        <div class="partners-header">
+            <h1>Our Valued Partners</h1>
+            <p>We collaborate with the best in the Roblox scripting community to bring you premium experiences</p>
+        </div>
+
+        <!-- Partners Grid -->
+        <div class="partners-grid">
+            <!-- Partner 1 -->
+            <div class="partner-card">
+                <img src="/partners/scriptblox.png" alt="ScriptHub Logo" class="partner-logo">
+                <h3>ScriptBlox</h3>
+                <p>Premium script providers with over 1000+ unique game scripts</p>
+                <a href="https://scriptblox.com" class="partner-link">Visit Partner</a>
+            </div>
+            
+            <!-- Partner 2 -->
+            <div class="partner-card">
+                <img src="/partners/scripthub.png" alt="BloxTools Logo" class="partner-logo">
+                <h3>ScriptHub</h3>
+                <p>The goal of this script is to produce a hub that supports the majority of games and has the strongest GUIs available for those games. This script is 100% ad-free because it incorporates other scripts; hence, anyone may download it and begin using it right away without having to wait through any advertisements or obtain a key.</p>
+                <a href="https://discord.gg/productions" class="partner-link">Visit Partner</a>
+            </div>
+            
+            <!-- Partner 3 -->
+            <div class="partner-card">
+                <img src="/partners/rbx.png" alt="GameHax Logo" class="partner-logo">
+                <h3>RbxScripts</h3>
+                <p>Specialists in game-specific scripts and auto-farm solutions</p>
+                <a href="https://rbxscript.com" class="partner-link">Visit Partner</a>
+            </div>
+            
+            <!-- Partner 4 -->
+            <div class="partner-card">
+                <img src="/partners/ether.png" alt="Vortex Scripts Logo" class="partner-logo">
+                <h3>Etherbyte Hub</h3>
+                <p>Creators of making cool scripts!</p>
+                <a href="https://discord.gg/etherbytehub" class="partner-link">Visit Partner</a>
+            </div>
+        </div>
+
+        <!-- Partnership Banner -->
+        <div class="partnership-banner">
+            <h2>Want to Become a Partner?</h2>
+            <p>We're always looking to collaborate with quality script developers and Roblox communities. Join our network and get featured across our platform.</p>
+            <a href="https://discord.gg/FCGn8B58jh" class="partner-link">Apply on Discord</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <a href="https://discord.gg/FCGn8B58jh" class="discord-link" target="_blank" rel="noopener noreferrer">
+                <img src="discord.png" alt="Join our Discord" class="discord-icon">
+                Join Our Discord Server
+            </a>
+            <p class="copyright">&copy; 2025 XelaRelam Roblox Scripts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

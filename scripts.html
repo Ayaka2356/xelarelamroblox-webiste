@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Details - XelaRelam Roblox Scripts</title>
+    <!-- Favicon Links -->
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+            border-radius: 5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:hover {
+            color: #8b5cf6;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Script Header */
+        .script-header {
+            padding: 40px 0 20px;
+        }
+        
+        .script-header h1 {
+            color: #8b5cf6;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .script-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #8b5cf6;
+        }
+        
+        .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .username {
+            font-weight: bold;
+            color: #8b5cf6;
+            font-size: 1.1rem;
+        }
+        
+        .upload-date {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Script Content */
+        .script-content {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid #333;
+        }
+        
+        .script-description {
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .script-description h2 {
+            color: #8b5cf6;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .script-description p, .script-description ul {
+            margin-bottom: 15px;
+        }
+        
+        .script-description ul {
+            padding-left: 20px;
+        }
+        
+        .script-description li {
+            margin-bottom: 8px;
+        }
+        
+        .script-code {
+            background-color: #0a0a0a;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #333;
+        }
+        
+        .script-code h2 {
+            color: #8b5cf6;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .script-code pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+        
+        .script-code code {
+            font-family: 'Courier New', monospace;
+            color: #8b5cf6;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Example Scripts */
+        .examples-section {
+            margin: 40px 0;
+        }
+        
+        .examples-section h2 {
+            color: #8b5cf6;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .script-card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            transition: all 0.3s;
+        }
+        
+        .script-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
+        }
+        
+        .script-card h3 {
+            color: #8b5cf6;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .script-card p {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+        
+        /* Reviews Section */
+        .reviews-section {
+            margin: 50px 0;
+        }
+        
+        .reviews-section h2 {
+            color: #8b5cf6;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .review-card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #8b5cf6;
+        }
+        
+        .review-header h3 {
+            margin: 0;
+            color: #8b5cf6;
+            font-size: 1.1rem;
+        }
+        
+        .review-header div {
+            color: gold;
+            font-size: 0.9rem;
+        }
+        
+        .review-card p {
+            color: #ddd;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Review Form */
+        .review-form {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 1px solid #333;
+        }
+        
+        .review-form h3 {
+            color: #8b5cf6;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .rating-stars {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .star {
+            color: #aaa;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+        
+        .star:hover, .star.active {
+            color: gold;
+        }
+        
+        .review-form textarea {
+            width: 100%;
+            min-height: 100px;
+            background-color: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 15px;
+            color: white;
+            margin-bottom: 15px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .submit-btn {
+            background-color: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+        
+        .submit-btn:hover {
+            background-color: #7c4dff;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .discord-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7289da;
+            text-decoration: none;
+            transition: transform 0.3s;
+            font-size: 1rem;
+        }
+        
+        .discord-link:hover {
+            transform: scale(1.05);
+            color: #8b5cf6;
+        }
+        
+        .discord-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 15px;
+            }
+            
+            .script-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .script-content, .script-card, .review-card, .review-form {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.1rem;
+            }
+            
+            .logo img {
+                height: 30px;
+            }
+            
+            .script-meta, .review-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .user-avatar, .review-avatar {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="XelaRealm Logo">
+                XelaRelam Roblox Scripts
+            </a>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="scripts.html">Scripts</a>
+                <a href="partners.html">Partners</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Script Header -->
+        <div class="script-header">
+            <h1>Infinite Yield Admin Script</h1>
+            <div class="script-meta">
+                <img src="/avatars/ez_luffy.png" alt="User Avatar" class="user-avatar">
+                <div class="user-info">
+                    <span class="username">ez_luffy</span>
+                    <span class="upload-date">Uploaded on: January 15, 2025</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Script Content -->
+        <div class="script-content">
+            <div class="script-description">
+                <h2>Description</h2>
+                <p>Infinite Yield is the most powerful admin script for Roblox. It provides over 200 commands for moderating and enhancing your gameplay experience. Works on all games and gets regular updates.</p>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Player management commands (kick, ban, mute)</li>
+                    <li>Teleportation and navigation tools</li>
+                    <li>Game manipulation functions</li>
+                    <li>Custom command creation</li>
+                </ul>
+            </div>
+
+            <div class="script-code">
+                <h2>Script Code</h2>
+                <pre><code>loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()</code></pre>
+            </div>
+        </div>
+
+        <!-- Example Scripts Section -->
+        <div class="examples-section">
+            <h2>Best Scripts</h2>
+            
+            <div class="script-card">
+                <div class="script-meta">
+                    <img src="/avatars/danes.png" alt="User Avatar" class="user-avatar">
+                    <div class="user-info">
+                        <span class="username">Dantes(EtherbyteHub)</span>
+                        <span class="upload-date">Uploaded on: March 20, 2025</span>
+                    </div>
+                </div>
+                <h3>Arise CrossOver Script</h3>
+                <p>One of the Best Script of Arise CrossOver to check anime.</p>
+                <pre><code>loadstring(game:HttpGet("https://raw.githubusercontent.com/EtherbyteHub/Main-EtherbyteHub-Dantes./refs/heads/main/DANTES",true))()</code></pre>
+            </div>
+            
+            <div class="script-card">
+                <div class="script-meta">
+                    <img src="/avatars/aukarenmi.png" alt="User Avatar" class="user-avatar">
+                    <div class="user-info">
+                        <span class="username">aukarenmi</span>
+                        <span class="upload-date">Uploaded on: March 27, 2025</span>
+                    </div>
+                </div>
+                <h3>Dead Rails Script</h3>
+                <p>Check Players through phantom shooting and be a gun shooter.</p>
+                <pre><code>loadstring(game:HttpGet("https://raw.githubusercontent.com/badass1ia/Merciful/refs/heads/main/Absurdity"))()</code></pre>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="reviews-section">
+            <h2>What People Says ?</h2>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="/avatars/jelosus.png" alt="Reviewer Avatar" class="review-avatar">
+                    <div>
+                        <h3>jelosus1</h3>
+                        <div>★★★★★ (5/5)</div>
+                    </div>
+                </div>
+                <p>This script is amazing! It has all the features I need and works perfectly in every game I've tried. The developer updates it regularly too.</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="/avatars/karen.png" alt="Reviewer Avatar" class="review-avatar">
+                    <div>
+                        <h3>Karen Elysia</h3>
+                        <div>★★★★☆ (4/5)</div>
+                    </div>
+                </div>
+                <p>Great script overall, but sometimes the teleport feature doesn't work in certain games. Otherwise, very useful commands, but we Love Xelarelam Community.</p>
+            </div>
+
+            <!-- Review Form -->
+            <div class="review-form">
+                <h3>Leave a Review</h3>
+                <p>if the button does not work, join our discord server and leave review there!</p>
+                <div class="rating-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <textarea placeholder="Write your review here..."></textarea>
+                <button class="submit-btn">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <a href="https://discord.gg/FCGn8B58jh" class="discord-link" target="_blank" rel="noopener noreferrer">
+                <img src="discord.png" alt="Join our Discord" class="discord-icon">
+                Join Our Discord Server
+            </a>
+            <p class="copyright">&copy; 2025 XelaRelam Roblox Scripts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Star rating functionality
+        const stars = document.querySelectorAll('.star');
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                stars.forEach((s, i) => {
+                    if (i <= index) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

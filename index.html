@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XelaRelam Roblox Scripts</title>
+    <!-- Favicon Links -->
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+            border-radius: 5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:hover {
+            color: #8b5cf6;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: auto;
+            min-height: 60vh;
+            background-color: #252525;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 60px 20px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            color: #8b5cf6;
+            text-shadow: 0 0 15px rgba(139, 92, 246, 0.7);
+        }
+        
+        .logo-gif {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 30px auto;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.8);
+            transition: all 0.3s ease-out;
+            border: 3px solid #8b5cf6;
+        }
+        
+        .logo-gif:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(139, 92, 246, 1);
+        }
+        
+        .hero-content p {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #aaa;
+            margin-top: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Scripts Section */
+        .scripts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .script-card {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+        
+        .script-card:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .script-card h3 {
+            margin-top: 0;
+            color: #8b5cf6;
+            font-size: 1.3rem;
+        }
+        
+        .script-card p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        
+        .script-card pre {
+            background-color: #0a0a0a;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.85rem;
+        }
+        
+        .script-card code {
+            font-family: 'Courier New', monospace;
+            color: #8b5cf6;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .discord-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7289da;
+            text-decoration: none;
+            transition: transform 0.3s;
+            font-size: 1rem;
+        }
+        
+        .discord-link:hover {
+            transform: scale(1.05);
+            color: #8b5cf6;
+        }
+        
+        .discord-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Headings */
+        h2 {
+            color: #8b5cf6;
+            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            text-align: center;
+        }
+        
+        /* About Section */
+        #about p {
+            line-height: 1.6;
+            color: #aaa;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 15px;
+            }
+            
+            .hero {
+                min-height: 70vh;
+                padding: 40px 20px;
+            }
+            
+            .logo-gif {
+                max-width: 300px;
+            }
+            
+            .scripts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.1rem;
+            }
+            
+            .logo img {
+                height: 30px;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .logo-gif {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="XelaRealm Logo">
+                XelaRelam Roblox Scripts
+            </a>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="scripts.html">Scripts</a>
+                <a href="partners.html">Partners</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>XelaRelam Roblox Scripts</h1>
+            <img src="logo.gif" alt="XelaRealm Animated Logo" class="logo-gif">
+            <p>PREMIUM SCRIPTS FOR YOUR FAVORITE ROBLOX GAMES</p>
+        </div>
+    </section>
+
+    <!-- Scripts Section -->
+    <div class="container">
+        <h2 id="scripts">Featured Scripts</h2>
+        <div class="scripts-grid">
+            <!-- Script Card 1 -->
+            <div class="script-card">
+                <h3>Infinite Yield</h3>
+                <p>Advanced admin commands for any Roblox game</p>
+                <pre><code>loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()</code></pre>
+            </div>
+            
+            <!-- Script Card 2 -->
+            <div class="script-card">
+                <h3>Redz Hub</h3>
+                <p>Best Premium Script in Blox Fruits</p>
+                <pre><code>loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))(Settings)</code></pre>
+            </div>
+            
+            <!-- Script Card 3 -->
+            <div class="script-card">
+                <h3>Fisch Script</h3>
+                <p>Best Premium Fisch Script</p>
+                <pre><code>loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3adca129b294fc6ae3be0888ce4e2b1f.lua"))()</code></pre>
+            </div>
+            
+            <!-- Script Card 4 - Bluelock Rivals Script -->
+            <div class="script-card">
+                <h3>Bluelock Rivals Script</h3>
+                <p>Premium script for Bluelock Rivals game</p>
+                <pre><code>loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/11b27d5fda9f766b0525f84d8a056dcc.lua"))()</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="container" id="about">
+        <h2>About XelaRelam Roblox Scripts</h2>
+        <p>We provide high-quality Roblox scripts for various games. Our scripts are tested and updated regularly to ensure they work with the latest game versions. Our team of developers works hard to bring you the best scripts for your favorite Roblox experiences.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <a href="https://discord.gg/FCGn8B58jh" class="discord-link" target="_blank" rel="noopener noreferrer">
+                <img src="discord.png" alt="Join our Discord" class="discord-icon">
+                Join Our Discord Server
+            </a>
+            <p class="copyright">&copy; 2025 XelaRelam Roblox Scripts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "routes": [
+    {
+      "src": "/scripts",
+      "dest": "/scripts.html",
+      "headers": {
+        "Content-Type": "text/html"
+      }
+    },
+    {
+      "src": "/partners",
+      "dest": "/partners.html",
+      "headers": {
+        "Content-Type": "text/html"
+      }
+    },
+    {
+      "src": "/",
+      "dest": "/index.html",
+      "headers": {
+        "Content-Type": "text/html"
+      }
+    }
+  ]
+}
